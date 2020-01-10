@@ -1,5 +1,7 @@
 var QuestionObj = function(question, options, ans) {
-  (this.question = question), (this.options = options), (this.ans = ans);
+  (this.question = question), 
+  (this.options = options), 
+  (this.ans = ans);
 };
 
 var question1 = new QuestionObj(
@@ -41,9 +43,8 @@ function checkAnswer() {
 function loadData() {
   if (sessionStorage.getItem("qNo")) {
     currentQuestion = parseInt(sessionStorage.getItem("qNo"));
-    currentQuestion == 1
-      ? loadQuestion(currentQuestion)
-      : loadQuestion(currentQuestion - 1);
+    currentQuestion == 1 ? loadQuestion(currentQuestion) : loadQuestion(currentQuestion - 1);
+    
   } else {
     var questionInHtml = document.querySelector("#questionInHtml");
     questionInHtml.innerHTML = question1.question;
