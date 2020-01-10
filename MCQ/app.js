@@ -44,7 +44,7 @@ function loadData() {
   if (sessionStorage.getItem("qNo")) {
     currentQuestion = parseInt(sessionStorage.getItem("qNo"));
     currentQuestion == 1 ? loadQuestion(currentQuestion) : loadQuestion(currentQuestion - 1);
-    
+    loadSubmittedAns = '';
   } else {
     var questionInHtml = document.querySelector("#questionInHtml");
     questionInHtml.innerHTML = question1.question;
